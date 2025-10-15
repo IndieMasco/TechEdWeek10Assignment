@@ -4,20 +4,24 @@ from flask_cors import CORS
 app = Flask(__name__)
 cors = CORS(app, origins="*") 
 
-@app.route("/api/users", methods=['GET'])
+@app.route("/")
+def index():
+    return "Homepage"
+
+@app.route("/users", methods=['GET'])
 def users():
     return jsonify({
         "users" : [
             "Sam",
             "Gabby",
             "Jess",
-            "James",
-            "https://www.youtube.com/watch?v=1qe-4j8H4Me&t=117s",
-            "https://www.youtube.com/watch?v=ct1MqpQoM68"
+            "James"
         ],
         "links": [
-            "https://www.youtube.com/watch?v=1qe-4j8H4Me&t=117s",
-            "https://www.youtube.com/watch?v=ct1MqpQoM68"
+            "https://www.youtube.com/watch?v=6i3e-j3wSf0",
+            "https://www.youtube.com/watch?v=AgVqsmz-ZW4",
+            "https://www.youtube.com/watch?v=D2cwvpJSBX4",
+            "https://www.youtube.com/watch?v=ctQMqqEo4G8"
         ]
     })
 
